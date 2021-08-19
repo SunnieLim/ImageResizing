@@ -1,0 +1,13 @@
+from PIL import Image
+import os
+
+path= r"C:\Users\limen\Desktop\Sticker1\13124"
+
+
+for f in os.listdir(path):
+    if f.endswith('.png'):
+       i = Image.open(f)
+       fn, fext = os.path.splitext(f)
+
+       new_image = i.resize((512,417))
+       new_image.save('resize/{}_resize{}'.format(fn, fext))
